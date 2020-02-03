@@ -21,7 +21,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.core.exceptions import ObjectDoesNotExist
 from . models import Image,Listing,Booking,Timeslot
-# from .forms import NewImageForm,ListingForm,BookingForm,SignUpForm,TimeForm
+from .forms import NewImageForm,ListingForm,BookingForm,SignUpForm,TimeForm
 
 # Create your views here.
 
