@@ -7,39 +7,9 @@
 from __future__ import unicode_literals
 
 from django.db import models
-# from tinymce.models import HTMLField
-
-# # Create your models here.
-# from collectionfield.models import CollectionField
 from django.contrib.auth.models import User
 from datetime import datetime as dt
-# from model_utils import Choices
-# from moneyfield import MoneyField
 
-
-# class Profile(models.Model):
-
-#     user=models.OneToOneField(User, on_delete=models.CASCADE, blank=True, related_name='profile')
-#     pub_date = models.DateField(auto_now_add=True)
-#     profile_photo = models.ImageField(upload_to = 'profile/') 
-#     bio = models.TextField(max_length=255) 
-    
-
-    
-
-    # @classmethod  
-    # def find_profile(cls,first_name):
-    #     profile = Profile.objects.filter(user=username).all()
-    #     return profile
-
-    # def save_user(self):
-    #      self.save()
-
-    # def delete_profile(self):
-    #     self.delete()     
-
-    # def __str__(self):
-    #     return self.user.username
 
 
 class Booking(models.Model):
@@ -49,8 +19,8 @@ class Booking(models.Model):
     contact = models.CharField(max_length=255, blank=True, null=True)
     address = models.CharField(max_length=255, blank=True, null=True)
     user = models.OneToOneField(User, on_delete=models.CASCADE, blank=True,null=True, related_name='user_booking')
-    listing = models.ForeignKey('Listing', on_delete=models.CASCADE, related_name='listing_booking')
-    Timeslot = models.ForeignKey('Timeslot', on_delete=models.CASCADE, related_name='timeslot_booking')
+    # listing = models.ForeignKey('Listing', on_delete=models.CASCADE, related_name='listing_booking')
+    # Timeslot = models.ForeignKey('Timeslot', on_delete=models.CASCADE, related_name='timeslot_booking')
    
     
 
@@ -79,13 +49,11 @@ class Booking(models.Model):
 
 class Timeslot(models.Model):
 
-    # title = models.CharField(max_length=50)
+  
     date = models.DateField(auto_now_add=True,blank=True, null=True)
     start_time = models.DateField(auto_now_add=True,blank=True, null=True)
     end_time = models.DateField(auto_now_add=True,blank=True, null=True)
-    # booking = models.ForeignKey(Booking,null=True,related_name='timeslot_booking')
-    # user = models.OneToOneField(User,on_delete=models.CASCADE,null=True, blank=True, related_name='timeslot_user')
-
+   
     class meta:
         ordering = ['-date'] 
 
@@ -106,12 +74,9 @@ class Timeslot(models.Model):
 class Image(models.Model):
    
     title = models.CharField(max_length=50)
-    # listing = models.CharField(max_length=100)
     pub_date = models.DateField(auto_now_add=True)
     image_path = models.ImageField(upload_to = 'images/')
-    # image = models.OneToOneField(User, related_name='image_likes',null=True , blank=True)
-    # profile = models.ForeignKey('Profile', on_delete=models.CASCADE, default=0, related_name='timeslot_booking')
-  
+   
 
 
 
@@ -173,14 +138,12 @@ class Listing(models.Model):
     category = models.CharField(max_length=255,null=True, choices=PROPERTY_CHOICES, default=apartments)
     description = models.CharField(max_length=255,null=True)
     bedrooms = models.CharField(max_length=255,null=True)
-    # pricing = MoneyField(decimal_places=2,default=0,default_currency='USD',max_digits=11,)
     pricing = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     featured_pic_path = models.ImageField(upload_to = 'list/')
     user = models.ForeignKey(User,related_name='listings', null=True, on_delete=models.CASCADE, blank=True,)
     timeslot = models.ForeignKey(Timeslot,null=True, on_delete=models.CASCADE, related_name='timeslots')
     booking = models.ForeignKey(Booking,null=True, on_delete=models.CASCADE, related_name='bookings')
-    # profile = models.ForeignKey('Profile', on_delete=models.CASCADE, default=0, related_name='listing_profile')
-    # apartment = models.ForeignKey("Apartment",related_name='apartment')
+
 
     @classmethod
     def get_all(cls):
