@@ -1,28 +1,16 @@
 {% extends 'base.html' %}
 {% load bootstrap4%} 
 {% load static%}
-<!-- Navbar block -->
-<!-- {% block navbar %}
-
-    {% include 'navbar.html' %}
-
-{% endblock %} -->
 
 <!-- Content block -->
+
+
 {% block content %}
 
 
-
-{% block styles %}
-      {% bootstrap_css %}
-      <link rel="stylesheet" href="{% static 'css/styles.css' %}"> 
-    {% endblock %}
-{{form.media}}
+<div class="top mt-5">
 
 
-<div class="top">
-
-</div>
 <div class="container">
 
     <div class="row">
@@ -66,6 +54,7 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+</div>
 </div>
 
 {% endblock%}

@@ -14,10 +14,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render,redirect,get_object_or_404
+from django.shortcuts import render,redirect,get_object_or_404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-# from django.contrib.auth.views import login
+from django.contrib.auth import logout,login
+# from django.contrib.auth import login
 from django.contrib.auth import authenticate
 from django.core.exceptions import ObjectDoesNotExist
 from . models import Image,Listing,Booking,Timeslot
@@ -27,7 +28,7 @@ from .forms import NewImageForm,ListingForm,BookingForm,SignUpForm,TimeForm
 
 
 
-@login_required(login_url='/accounts/login/')
+
 def index(request):
 
     '''
@@ -40,7 +41,7 @@ def index(request):
     apartments = Listing.objects.filter(category__contains="apartments").all()
     print(apartments)
 
-    mansionattes = Listing.objects.filter(category__contains='mansionattes')
+    mansionattes = Listing.objects.filter(category__contains="mansionattes").all()
     print(mansionattes)
 
     bungalows = Listing.objects.filter(category__contains="bungalows").all()
@@ -49,6 +50,13 @@ def index(request):
 
     
     return render(request, 'home.html', {"listings":listings, "apartments": apartments,"mansionattes":mansionattes,"bungalows":bungalows})
+
+# this code logs out the current user (logout function)
+# def logout_view(request):
+#     logout(request)
+    # return HttpResponseRedirect('/index_page/')
+    #  return HttpResponseRedirect('/loginpage/')
+    # return redirect('%s?next=%s' % (settings.LOGIN_URL, request.path))
 
 
 

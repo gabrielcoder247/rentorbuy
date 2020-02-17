@@ -20,9 +20,9 @@
                 <nav class="categories">
                   <div class="nav nav-tabs nav-justified category" id="nav-tab" role="tablist">
                     <a class="nav-item nav-link cat active" id="all-listings-tab" data-toggle="tab" href="#all-listings" role="tab" aria-controls="all-listings" aria-selected="true">All Listings</a>
-                    <a class="nav-item nav-link cat" id="apartments-tab" data-toggle="tab" href="#apartments" role="tab" aria-controls="apartments" aria-selected="false">Apartments</a>
-                    <a class="nav-item nav-link cat" id="bungalows-tab" data-toggle="tab" href="#bungalows" role="tab" aria-controls="bungalows" aria-selected="false">Bungalows</a>
-                    <a class="nav-item nav-link cat" id="mansionattes-tab" data-toggle="tab" href="#mansionattes" role="tab" aria-controls="mansionattes" aria-selected="false">Mansionattes</a>
+                <a class="nav-item nav-link cat" id="apartments-tab" data-toggle="tab" href="#apartments" role="tab" aria-controls="apartments" aria-selected="false">Apartments</a>
+                    <a class="nav-item nav-link cat" id="bangalows-tab" data-toggle="tab" href="#bangalows" role="tab" aria-controls="bangalows" aria-selected="false">Bungalows</a>
+                    <a class="nav-item nav-link cat" id="massionette-tab" data-toggle="tab" href="#massionette" role="tab" aria-controls="massionette" aria-selected="false">Massionettes</a>
                   </div>
                 </nav>
             </div>
@@ -56,7 +56,7 @@
                                                <p class="metadata">Located in {{list.location}}</p>
                                                <p class="metadata">Priced at AED {{list.pricing}}</p>
                                                <p> <small class="text-muted">{{list.category}} | {{list.bedrooms}}</small></p>
-                                               <a href="{% url 'single_listing' list.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <a href="" class= "btn btn-primary btn-sm">View Details</a>
                                                <p class="metadata">Posted on {{list.timeslot.date}}</p>
                                            </div>
                                        </div>
@@ -96,7 +96,7 @@
                                                <p class="metadata">Located in {{apartment.location}}</p>
                                                <p class="metadata">Priced at AED {{apartment.pricing}}</p>
                                                <p> <small class="text-muted">{{apartment.category}} | {{apartment.bedrooms}}</small></p>
-                                               <a href="{% url 'single_listing' apartment.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <a href="" class= "btn btn-primary btn-sm">View Details</a>
                                            </div>
                                        </div>
                                    </div>
@@ -111,12 +111,12 @@
                </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="bungalows" role="tabpanel" aria-labelledby="bungalows">
+        <div class="tab-pane fade" id="bangalows" role="tabpanel" aria-labelledby="bangalows">
 
             <div class="container content">
                <div class="row">
                    <h3 class="property">Featured Bungalows</h3>
-                   {% if bungalows %}
+                   {% if bungalows%}
                    <div class="container-fluid">
                        <div class="row">
                        {% for bungalow in bungalows %}
@@ -137,7 +137,7 @@
                                                <p class="metadata">Located in {{bungalow.location}}</p>
                                                <p class="metadata">Priced at AED {{bungalow.pricing}}</p>
                                                <p> <small class="text-muted">{{bungalow.category}} | {{bungalow.bedrooms}}</small></p>
-                                               <a href="{% url 'single_listing' bungalow.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <a href="" class= "btn btn-primary btn-sm">View Details</a>
                                            </div>
                                        </div>
                                    </div>
@@ -152,33 +152,33 @@
                </div>
           </div>
         </div>
-        <div class="tab-pane fade" id="mansionattes" role="tabpanel" aria-labelledby="mansionattes">
+        <div class="tab-pane fade" id="massionette" role="tabpanel" aria-labelledby="massionette">
 
             <div class="container content">
                <div class="row">
-                   <h3 class="property">Featured Mansionattes</h3>
-                   {% if mansionattes %}
+                   <h3 class="property">Featured Massionettes</h3>
+                   {% if massionettes %}
                    <div class="container-fluid">
                        <div class="row">
-                       {% for mansionatte in mansionattes %}
+                       {% for massionette in massionettes %}
                                    <div class="col-sm-6 col-md-4">
                                        <div class="card article">
                                            <a href="#" target="_blank">
                
                
-                                               {% if mansionatte.featured_pic_path %}
-                                                   <img class="card-img-top" src="{{mansionatte.featured_pic_path.url}}" alt="Image of" style="height:220px">
+                                               {% if massionette.featured_pic_path %}
+                                                   <img class="card-img-top" src="{{massionette.featured_pic_path.url}}" alt="Image of" style="height:220px">
                                                {% else %}
                                                    <img src="{% static "photos/myhouse.png" %}" alt="" class="card-img-top" style="height:220px">
                                                {% endif %}
                                            </a>
                                            <div class="card-body">
-                                               <h4 class="card-title">{{mansionatte.title}}</h4>
+                                               <h4 class="card-title">{{massionette.title}}</h4>
                                                <hr>
-                                               <p class="metadata">Located in {{mansionatte.location}}</p>
-                                               <p class="metadata">Priced at AED {{mansionatte.pricing}}</p>
-                                               <p> <small class="text-muted">{{mansionatte.category}} | {{mansionatte.bedrooms}}</small></p>
-                                               <a href="{% url 'single_listing' mansionatte.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <p class="metadata">Located in {{massionette.location}}</p>
+                                               <p class="metadata">Priced at AED {{massionette.pricing}}</p>
+                                               <p> <small class="text-muted">{{massionette.category}} | {{massionette.bedrooms}}</small></p>
+                                               <a href="" class= "btn btn-primary btn-sm">View Details</a>
                                            </div>
                                        </div>
                                    </div>

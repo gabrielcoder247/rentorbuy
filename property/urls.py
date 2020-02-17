@@ -2,6 +2,7 @@ from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views as core_views
+from django.contrib.auth import logout
 from . import views
 
 urlpatterns=[
@@ -13,6 +14,8 @@ urlpatterns=[
     url(r'^profile/(?P<username>[0-9]+)$',views.profile, name='profile'),
     url(r'^new/image$',views.new_image,name='new_image'),
     url(r'^listing/times(\d+)/$',views.listing_times,name='listing_times'),
+    url(r'^sign-out/$', logout, name='logout'),
+   
     
     
 ]

@@ -123,12 +123,12 @@ class Image(models.Model):
 class Listing(models.Model):
     apartments = "apartments"
     Bungalows = "bungalows"
-    Massionettes = "mansionattes"
+    Mansionattes = "mansionattes"
 
     PROPERTY_CHOICES = [
     (apartments, "apartments"),
     (Bungalows, "bungalows"),
-    (Massionettes, "massionattes")
+    (Mansionattes, "mansionattes")
     ]
 
 
