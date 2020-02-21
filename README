@@ -1,0 +1,95 @@
+
+# Instaclone247
+
+
+## RentorBuyNow is a  web that user can list their property and renter can book 
+appointment to view the property based on schedules.
+## Created on: February, 25TH,  2020
+
+## Author
+By Gabriel Nwachukwu
+
+## GITHUB Account:**https://github.com/gabrielcoder247**
+
+## Description
+Users can post pictures and other user like them, follow them
+# features
+expand to view details
+post pictures
+profile
+book views
+
+
+
+
+## User Stories
+As a user I would like:
+
+to Sign in with the application to start using.
+to Set up a profile about me and a general location and my neighborhood name
+to find a list of different properties to book and view.
+to change My neighborhood when I decide to move out.
+
+## Specifications
+Get the specs [here](https://github.com/gabrielcoder247/pitch-v2.0/blob/master/SPECS.md)
+
+## Set-up and Installation
+
+## Prerequiites
+    - Python 3.6
+    - Ubuntu software
+
+## Clone the Repo
+Run the following command on the terminal:
+`git clone https://github.com/gabrielcoder247/instagram && cd PitchIt on your machine terminal`
+
+Install [Postgres](https://www.postgresql.org/download/)
+
+## Create a Virtual Environment
+Run the following commands in the same terminal:
+`sudo apt-get install python3.6-venv`
+`python3.6 -m venv virtual`
+`source virtual/bin/activate, to activate the virtual environment`
+
+## Install dependancies
+Install dependancies that will create an environment for the app to run
+`pip3 install -r requirements`
+
+
+## Run Database Migrations
+```
+python manage.py db makemigrations <app name>
+python manage.py db migrate 
+
+```
+
+## Running the app in development
+In the same terminal type:
+`python3 manage.py runserver`
+
+Open the browser on `http://localhost:8000/`
+
+
+## Dependancy Installments
+
+pip3 install python3.6
+pip3 install django==3.0 django-heroku gunicorn pillow whitenoise python-decouple psycopg2-binary django-bootstrap3
+
+## Known bugs
+It does not have bugs.But if any problems should occur,you can contact me on the address below
+
+N/B The finished product yet read ...more features and functionalities are still being worked on.
+
+
+## Technologies used
+    - Python 3.6
+    -Django
+    - HTML
+    - Bootstrap 4
+    - JavaScript
+    - Heroku
+    - Postgresql
+
+## Support and contact details
+Contact me on gabrielcoder@gmail.com for any comments, reviews or advice.
+
