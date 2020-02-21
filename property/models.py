@@ -135,6 +135,7 @@ class Listing(models.Model):
 
     title = models.CharField(max_length=50,)
     location = models.CharField(max_length=100,null=True)
+    date = models.DateField(auto_now_add=True,blank=True, null=True)
     category = models.CharField(max_length=255,null=True, choices=PROPERTY_CHOICES, default=apartments)
     description = models.CharField(max_length=255,null=True)
     bedrooms = models.CharField(max_length=255,null=True)

@@ -34,7 +34,7 @@
 
             <div class="container content">
                 <div class="row">
-                   <h3 class="property">Featured Listings</h3>
+                   <h4 class="property" style="color:blue"> <b> Featured Listings </b></h4>
                    {% if listings%}
                    <div class="container-fluid">
                        <div class="row">
@@ -57,7 +57,10 @@
                                                <p class="metadata">Priced at AED {{list.pricing}}</p>
                                                <p> <small class="text-muted">{{list.category}} | {{list.bedrooms}}</small></p>
                                                <a href="{% url 'single_listing' list.id %}" class= "btn btn-primary btn-sm">View Details</a>
-                                               <p class="metadata">Posted on {{list.timeslot.date}}</p>
+
+                                               <hr>
+                                               <p class="metadata mb-0 mt-0"> <p> <small>Posted on {{list.date}}</small> <br> <i>  <small> <b>by  {{list.user.username}} </b></small> </i></p>
+                                        
                                            </div>
                                        </div>
                                    </div>
@@ -74,7 +77,7 @@
 
             <div class="container content">
                <div class="row">
-                   <h3 class="property">Featured Apartments</h3>
+                   <h4 class="property" style="color:blue"> <b> Featured Apartments </b></h4>
                    {% if apartments %}
                    <div class="container-fluid">
                        <div class="row">
@@ -97,6 +100,7 @@
                                                <p class="metadata">Priced at AED {{apartment.pricing}}</p>
                                                <p> <small class="text-muted">{{apartment.category}} | {{apartment.bedrooms}}</small></p>
                                                <a href="{% url 'single_listing' apartment.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <p class="metadata mt-3"> <small> Posted on {{apartment.date}}</small></p>
                                            </div>
                                        </div>
                                    </div>
@@ -115,7 +119,7 @@
 
             <div class="container content">
                <div class="row">
-                   <h3 class="property">Featured Bungalows</h3>
+                   <h4 class="property" style="color:blue"> <b> Featured Bungalows </b></h4>
                    {% if bungalows %}
                    <div class="container-fluid">
                        <div class="row">
@@ -138,6 +142,7 @@
                                                <p class="metadata">Priced at AED {{bungalow.pricing}}</p>
                                                <p> <small class="text-muted">{{bungalow.category}} | {{bungalow.bedrooms}}</small></p>
                                                <a href="{% url 'single_listing' bungalow.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <p class="metadata mt-3"> <small> Posted on {{bungalow.date}} </small></p>
                                            </div>
                                        </div>
                                    </div>
@@ -156,7 +161,7 @@
 
             <div class="container content">
                <div class="row">
-                   <h3 class="property">Featured Mansionattes</h3>
+                   <h4 class="property" style="color:blue"> <b> Featured  Mansionattes </b></h4>
                    {% if mansionattes %}
                    <div class="container-fluid">
                        <div class="row">
@@ -179,6 +184,7 @@
                                                <p class="metadata">Priced at AED {{mansionatte.pricing}}</p>
                                                <p> <small class="text-muted">{{mansionatte.category}} | {{mansionatte.bedrooms}}</small></p>
                                                <a href="{% url 'single_listing' mansionatte.id %}" class= "btn btn-primary btn-sm">View Details</a>
+                                               <p class="metadata mt-3"> <small> Posted on {{mansionatte.date}}</small></p>
                                            </div>
                                        </div>
                                    </div>
@@ -195,7 +201,10 @@
         </div>
       </div>
 
-
+      <div class="card-footer">
+        <!-- <p class="container__terms d-flex justify-content-center ">By signin up, you agree to our <br> <strong>Terms & Privacy Policy.</strong></p> -->
+            <p class="container__terms d-flex justify-content-center "> <small>&copy; <i style="color:blue"> RentorBuy.com</i> 2020 <br> <strong>Terms & Privacy Policy. </small> </strong></p>
+      </div>
 
 </div>
 
